@@ -9,7 +9,7 @@ const router = new Router()
 const port = process.env.PORT || 4000
 
 router.get('/get/:fileName', async (ctx, next) => {
-  const path = `../jsonFiles/${ctx.params.fileName}.json`  
+  const path = `./jsonFiles/${ctx.params.fileName}.json`  
   try {
     await fs.accessAsync(path)
     const data = require(path)
